@@ -39,5 +39,17 @@ export default defineConfig(({ mode }) => {
 
   return {
     plugins: [react(), agentTokenPlugin()],
+    server: {
+      proxy: {
+        '/api/create-checkout-session': {
+          target: 'http://localhost:3001',
+          changeOrigin: true,
+        },
+        '/api/stripe-webhook': {
+          target: 'http://localhost:3001',
+          changeOrigin: true,
+        }
+      }
+    }
   }
 })
