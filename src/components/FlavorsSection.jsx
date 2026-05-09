@@ -2,7 +2,7 @@ import React from 'react';
 
 export const FlavorsSection = React.memo(function FlavorsSection({ content }) {
   return (
-    <section className="scroll-section align-right" data-enter="88" data-leave="100" data-animation="stagger-up">
+    <section className="scroll-section align-right flavors-section" data-enter="104" data-leave="118" data-animation="stagger-up">
       <div className="section-inner">
         <span className="s-elem brand-chip px-3 py-1 text-[10px] uppercase tracking-[0.32em] mb-4 block w-fit">{content.badge}</span>
         <h2 className="s-elem brand-heading text-[clamp(2.6rem,5vw,5rem)] drop-shadow-lg text-white">
@@ -14,7 +14,7 @@ export const FlavorsSection = React.memo(function FlavorsSection({ content }) {
           {content.subtitle}
         </p>
 
-        <div className="s-elem mt-8 grid gap-4 md:grid-cols-2 pointer-events-auto">
+        <div className="s-elem mt-8 grid gap-4 md:grid-cols-2 pointer-events-auto flavors-grid">
           {content.items.map((flavor) => (
             <article key={flavor.name} className="premium-card rounded-[18px] p-5 relative overflow-hidden bg-white/[0.03] border border-white/10">
               <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-[#ff007f] via-[#5d2b9c] to-[#00f0ff] opacity-80"></div>

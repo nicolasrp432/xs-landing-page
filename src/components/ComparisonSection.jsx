@@ -9,7 +9,7 @@ export const ComparisonSection = React.memo(function ComparisonSection({ content
   };
 
   return (
-    <section className="scroll-section align-right" data-enter="38" data-leave="50" data-animation="scale-up">
+    <section className="scroll-section align-right" data-enter="44" data-leave="56" data-animation="scale-up">
       <div className="section-inner w-full">
         <span className="s-elem brand-chip px-3 py-1 text-[10px] uppercase tracking-[0.32em] mb-6 block w-fit">{content.badge}</span>
         

@@ -8,7 +8,7 @@ export const PricingSection = React.memo(function PricingSection({ content, onCT
   const proCta = variant === 'B' ? pro.ctaVariantB : pro.cta;
 
   return (
-    <section id="pricing" className="scroll-section flex flex-col items-center text-center !padding-0 w-full left-0 right-0 max-w-7xl mx-auto px-4" style={{ position: 'absolute' }} data-persist="true" data-enter="68" data-leave="82" data-animation="stagger-up">
+    <section id="pricing" className="scroll-section flex flex-col items-center text-center !padding-0 w-full left-0 right-0 max-w-7xl mx-auto px-4" style={{ position: 'absolute' }} data-persist="true" data-enter="72" data-leave="86" data-animation="stagger-up">
       <div className="s-elem mb-10 text-center relative">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-[#ff007f]/25 blur-[50px] -z-10"></div>
         <span className="brand-chip inline-block text-[10px] uppercase tracking-[0.32em] px-4 py-1 rounded-full mb-6">{content.badge}</span>

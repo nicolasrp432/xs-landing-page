@@ -3,7 +3,7 @@ import { Check, Zap } from './Icons';
 
 export const VitaminsSection = React.memo(function VitaminsSection({ content }) {
   return (
-    <section className="scroll-section align-left" data-enter="24" data-leave="34" data-animation="fade-up">
+    <section className="scroll-section align-left" data-enter="30" data-leave="40" data-animation="fade-up">
       <div className="section-inner">
         <span className="s-elem brand-chip px-3 py-1 text-[10px] uppercase tracking-[0.32em] mb-4 block w-fit">{content.badge}</span>
         <h2 className="s-elem brand-heading text-[clamp(2.6rem,5vw,5rem)] drop-shadow-lg text-white">

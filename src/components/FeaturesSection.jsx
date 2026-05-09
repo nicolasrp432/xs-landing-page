@@ -2,7 +2,7 @@ import React from 'react';
 
 export const FeaturesSection = React.memo(function FeaturesSection({ content }) {
   return (
-    <section className="scroll-section align-right" data-enter="12" data-leave="20" data-animation="clip-reveal">
+    <section className="scroll-section align-right" data-enter="18" data-leave="26" data-animation="clip-reveal">
       <div className="section-inner opacity-100 flex flex-col gap-4 relative">
         <div className="absolute -left-16 top-0 w-px h-32 bg-gradient-to-b from-[#ff007f] to-transparent hidden md:block"></div>
         

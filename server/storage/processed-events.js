@@ -12,7 +12,7 @@ async function ensureDataDir() {
   } catch {
     try {
       await fs.mkdir(DATA_DIR, { recursive: true });
-    } catch (err) {
+    } catch {
       // Expected on Vercel
     }
   }
@@ -22,7 +22,7 @@ async function ensureDataDir() {
   } catch {
     try {
       await fs.writeFile(EVENTS_FILE, JSON.stringify([]));
-    } catch (err) {
+    } catch {
       // Expected on Vercel
     }
   }
@@ -34,7 +34,7 @@ export async function isEventProcessed(eventId) {
     const content = await fs.readFile(EVENTS_FILE, 'utf-8');
     const events = JSON.parse(content);
     return events.includes(eventId);
-  } catch (err) {
+  } catch {
     return false; // Default to false if we can't read
   }
 }
@@ -49,7 +49,7 @@ export async function markEventProcessed(eventId) {
       events.push(eventId);
       await fs.writeFile(EVENTS_FILE, JSON.stringify(events, null, 2));
     }
-  } catch (err) {
+  } catch {
     // Expected on Vercel - event won't be marked as processed locally
   }
 }
