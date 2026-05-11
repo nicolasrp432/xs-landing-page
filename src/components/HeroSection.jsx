@@ -5,7 +5,7 @@ export const HeroSection = React.memo(forwardRef(({ content }, ref) => {
   return (
     <div id="hero-overlay" ref={ref} className="flex flex-col gap-8 premium-shell">
       {/* Social proof badge */}
-      <div className="hero-word flex items-center gap-3" style={{ animationDelay: '0.05s' }}>
+      <div className="hero-word flex items-center gap-3 flex-col md:flex-row" style={{ animationDelay: '0.05s' }}>
         <div className="flex -space-x-2 rounded-full p-1.5 bg-black/40 backdrop-blur-sm border border-white/10">
           {[1,2,3,4].map(i => (
             <div key={i} className="w-8 h-8 rounded-full border-2 border-black/80 bg-gray-800 flex items-center justify-center overflow-hidden shadow-lg">
@@ -22,15 +22,14 @@ export const HeroSection = React.memo(forwardRef(({ content }, ref) => {
       </div>
 
       {/* Premium Title with enhanced contrast */}
-      <h1 className="brand-heading text-[clamp(3.25rem,8vw,7rem)] xl:text-[clamp(4.5rem,8.5vw,8.75rem)]" style={{ textShadow: '0 4px 20px rgba(0,0,0,0.8), 0 2px 6px rgba(0,0,0,0.9)' }}>
+      <h1 className="brand-heading text-[clamp(2.5rem,7vw,7rem)] md:text-[clamp(3.5rem,8vw,7rem)] xl:text-[clamp(4.5rem,8.5vw,8.75rem)]" style={{ textShadow: '0 4px 20px rgba(0,0,0,0.8), 0 2px 6px rgba(0,0,0,0.9)', lineHeight: '0.95' }}>
         {content.titleWords.map((word, idx) => (
           <span 
             key={idx} 
             className={`hero-word ${word.style}`} 
             style={{ 
               animationDelay: word.delay, 
-              paddingBottom: word.paddingBottom,
-              WebkitTextStroke: word.style.includes('gradient') ? 'none' : '0.5px rgba(255,255,255,0.1)'
+              paddingBottom: word.paddingBottom
             }}
           >
             {word.text}
@@ -39,8 +38,8 @@ export const HeroSection = React.memo(forwardRef(({ content }, ref) => {
       </h1>
 
       {/* Guarantees with glass effect */}
-      <div className="hero-word flex flex-col sm:flex-row gap-4 items-start sm:items-center mt-2" style={{ animationDelay: '0.55s' }}>
-        <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 px-4 py-2.5 rounded-full bg-black/40 backdrop-blur-md border border-white/10">
+      <div className="hero-word flex flex-col md:flex-row gap-4 items-center justify-center md:justify-start mt-4" style={{ animationDelay: '0.55s' }}>
+        <div className="flex flex-col md:flex-row items-center md:items-center gap-4 px-4 py-2.5 rounded-full bg-black/40 backdrop-blur-md border border-white/10">
           <div className="flex items-center gap-2 text-[11px] sm:text-xs text-white/90 brand-body tracking-[0.22em] uppercase font-medium">
             <Shield size={16} className="text-[#39ff14] drop-shadow-[0_0_8px_rgba(57,255,20,0.5)]" />
             <span style={{ textShadow: '0 1px 3px rgba(0,0,0,0.8)' }}>{content.guarantees[0]}</span>
@@ -54,10 +53,10 @@ export const HeroSection = React.memo(forwardRef(({ content }, ref) => {
       </div>
       
       {/* Description with premium styling */}
-      <div className="flex flex-col md:flex-row gap-6 items-start md:items-center mt-4">
+      <div className="flex flex-col md:flex-row gap-6 items-center md:items-center justify-center md:justify-start mt-6">
         <div className="hero-word hidden md:block w-12 h-[2px] bg-gradient-to-r from-[#ff007f] via-[#00f0ff] to-transparent rounded-full" style={{ animationDelay: '0.5s' }}></div>
         <p 
-          className="hero-word brand-body text-base md:text-lg font-medium tracking-wide max-w-md text-white/95 leading-relaxed" 
+          className="hero-word brand-body text-sm md:text-base lg:text-lg font-medium tracking-wide max-w-md text-white/90 leading-relaxed text-center md:text-left" 
           style={{ 
             animationDelay: '0.6s',
             textShadow: '0 2px 8px rgba(0,0,0,0.9), 0 1px 2px rgba(0,0,0,0.8)'

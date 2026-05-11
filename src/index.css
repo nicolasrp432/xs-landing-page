@@ -134,37 +134,55 @@ body::before {
   top: 0;
   left: 0;
   width: 100%;
-  padding: 0 5vw;
+  padding: 12vh 5vw;
   transform: translateY(-50%);
   pointer-events: auto;
+  display: flex;
+  align-items: center;
+  min-height: 120vh;
 }
 
 .align-left {
   padding-right: 55vw;
+  justify-content: flex-start;
 }
 
 .align-right {
   padding-left: 55vw;
+  justify-content: flex-end;
 }
 
 .section-inner {
-  max-width: min(40vw, 40rem);
+  max-width: min(45vw, 50rem);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 
 @media (max-width: 768px) {
+  .scroll-section {
+    padding: 8vh 5vw;
+    min-height: 100vh;
+  }
+
   .align-left, .align-right {
     padding-left: 5vw;
     padding-right: 5vw;
+    padding-top: 6vh;
+    padding-bottom: 6vh;
     text-align: center;
+    justify-content: center;
   }
+  
   .section-inner {
     max-width: 100%;
     margin: 0 auto;
+    gap: 1rem;
   }
 
   .flavors-section .section-inner {
     max-width: 100%;
-    padding-bottom: 16vh;
+    padding-bottom: 12vh;
   }
 
   .flavors-grid {

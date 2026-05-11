@@ -8,15 +8,15 @@ export const PricingSection = React.memo(function PricingSection({ content, onCT
   const proCta = variant === 'B' ? pro.ctaVariantB : pro.cta;
 
   return (
-    <section id="pricing" className="scroll-section flex flex-col items-center text-center !padding-0 w-full left-0 right-0 max-w-7xl mx-auto px-4" style={{ position: 'absolute' }} data-persist="true" data-enter="72" data-leave="86" data-animation="stagger-up">
-      <div className="s-elem mb-10 text-center relative">
+    <section id="pricing" className="scroll-section flex flex-col items-center text-center !padding-0 w-full left-0 right-0 max-w-7xl mx-auto px-4" style={{ position: 'absolute' }} data-persist="true" data-enter="78" data-leave="94" data-animation="stagger-up">
+      <div className="s-elem mb-16 text-center relative">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-[#ff007f]/25 blur-[50px] -z-10"></div>
-        <span className="brand-chip inline-block text-[10px] uppercase tracking-[0.32em] px-4 py-1 rounded-full mb-6">{content.badge}</span>
-        <h2 className="brand-heading text-[clamp(3rem,6vw,6.25rem)] text-white leading-none mb-4 drop-shadow-2xl">{content.title.line1} <br/><span className="text-transparent bg-clip-text bg-gradient-to-r from-[#5d2b9c] via-[#ff007f] to-[#00f0ff]">{content.title.line2}</span></h2>
-        <p className="brand-body text-white/65 max-w-md mx-auto text-sm font-medium mt-4" dangerouslySetInnerHTML={{ __html: content.subtitle }}></p>
+        <span className="brand-chip inline-block text-[10px] uppercase tracking-[0.32em] px-4 py-1 rounded-full mb-8">{content.badge}</span>
+        <h2 className="brand-heading text-[clamp(3rem,6vw,6.25rem)] text-white leading-tight mb-6 drop-shadow-2xl">{content.title.line1} <br/><span className="text-transparent bg-clip-text bg-gradient-to-r from-[#5d2b9c] via-[#ff007f] to-[#00f0ff]">{content.title.line2}</span></h2>
+        <p className="brand-body text-white/70 max-w-2xl mx-auto text-base font-medium mt-6" dangerouslySetInnerHTML={{ __html: content.subtitle }}></p>
       </div>
 
-      <div className="s-elem grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-4xl mx-auto cursor-auto pointer-events-auto perspective-[1000px]">
+      <div className="s-elem grid grid-cols-1 md:grid-cols-2 gap-10 w-full max-w-4xl mx-auto cursor-auto pointer-events-auto perspective-[1000px]">
         {/* Starter */}
         <div className="relative premium-card bg-black/50 p-8 rounded-[22px] text-left flex flex-col justify-between" style={{ transform: 'rotateY(5deg)' }}>
           <div>

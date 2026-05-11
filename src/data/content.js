@@ -4,7 +4,7 @@ export const CONTENT = {
     titleWords: [
       { text: "TU ENERGÍA.", style: "", delay: "0.1s" },
       { text: "SIN LÍMITES.", style: "text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-500 to-red-500", delay: "0.2s", paddingBottom: "10px" },
-      { text: "SIN AZÚCAR.", style: "text-stroke", delay: "0.3s" }
+      { text: "SIN AZÚCAR.", style: "text-transparent bg-clip-text bg-gradient-to-r from-[#39ff14] via-[#00f0ff] to-[#39ff14]", delay: "0.3s" }
     ],
     description: "Wild Berry Blast. El sabor intenso que tu rutina exige, con vitamina B para combatir la fatiga. Siente el impulso al instante.",
     guarantees: ["Garantía 30 Días", "Envío 24H"]

@@ -9,11 +9,11 @@ export const ComparisonSection = React.memo(function ComparisonSection({ content
   };
 
   return (
-    <section className="scroll-section align-right" data-enter="44" data-leave="56" data-animation="scale-up">
+    <section className="scroll-section align-right" data-enter="48" data-leave="62" data-animation="scale-up">
       <div className="section-inner w-full">
-        <span className="s-elem brand-chip px-3 py-1 text-[10px] uppercase tracking-[0.32em] mb-6 block w-fit">{content.badge}</span>
+        <span className="s-elem brand-chip px-3 py-1 text-[10px] uppercase tracking-[0.32em] mb-8 block w-fit">{content.badge}</span>
         
-        <h2 className="s-elem brand-heading text-[clamp(2.75rem,5.5vw,5.5rem)] mb-8 leading-none drop-shadow-lg text-white">
+        <h2 className="s-elem brand-heading text-[clamp(2.75rem,5.5vw,5.5rem)] mb-12 leading-tight drop-shadow-lg text-white">
           {content.title.line1} <br/><span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ff007f] via-white to-[#00f0ff]">{content.title.line2}</span> {content.title.line3}
         </h2>
 
