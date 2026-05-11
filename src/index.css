@@ -161,13 +161,15 @@ body::before {
 
 @media (max-width: 768px) {
   .align-left, .align-right {
-    padding-left: 5vw;
-    padding-right: 5vw;
+    padding-left: 5vw !important;
+    padding-right: 5vw !important;
     text-align: center;
+    justify-content: center !important;
   }
   .section-inner {
     max-width: 100%;
     margin: 0 auto;
+    align-items: center;
   }
 
   .scroll-section {
@@ -176,6 +178,7 @@ body::before {
 
   .section-inner {
     max-width: 100% !important;
+    margin: 0 auto !important;
   }
 
   .flavors-section .section-inner {
