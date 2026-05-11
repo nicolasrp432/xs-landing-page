@@ -160,10 +160,51 @@ body::before {
 }
 
 @media (max-width: 768px) {
-  .scroll-section {
-    padding: 8vh 5vw;
-    min-height: 100vh;
+  .align-left, .align-right {
+    padding-left: 5vw;
+    padding-right: 5vw;
+    text-align: center;
   }
+  .section-inner {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .scroll-section {
+    padding: 0 5vw !important;
+  }
+
+  .section-inner {
+    max-width: 100% !important;
+  }
+
+  .flavors-section .section-inner {
+    max-width: 100%;
+    padding-bottom: 16vh;
+  }
+
+  .flavors-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .flavors-grid article {
+    padding: 1.5rem;
+    min-height: 0;
+  }
+
+  .premium-card {
+    padding: 1.5rem !important;
+  }
+
+  .brand-heading {
+    line-height: 1.1;
+  }
+
+  .brand-body {
+    font-size: 0.95rem;
+  }
+}
 
   .align-left, .align-right {
     padding-left: 5vw;

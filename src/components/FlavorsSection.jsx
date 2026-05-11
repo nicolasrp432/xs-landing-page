@@ -2,19 +2,19 @@ import React from 'react';
 
 export const FlavorsSection = React.memo(function FlavorsSection({ content }) {
   return (
-    <section className="scroll-section align-right flavors-section" data-enter="104" data-leave="118" data-animation="stagger-up">
+    <section className="scroll-section align-right flavors-section" data-enter="110" data-leave="127" data-animation="stagger-up">
       <div className="section-inner">
-        <span className="s-elem brand-chip px-3 py-1 text-[10px] uppercase tracking-[0.32em] mb-4 block w-fit">{content.badge}</span>
-        <h2 className="s-elem brand-heading text-[clamp(2.6rem,5vw,5rem)] drop-shadow-lg text-white">
+        <span className="s-elem brand-chip px-3 py-1 text-[10px] uppercase tracking-[0.32em] mb-8 block w-fit">{content.badge}</span>
+        <h2 className="s-elem brand-heading text-[clamp(2.6rem,5vw,5rem)] drop-shadow-lg text-white leading-tight">
           {content.title.line1}<br />
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ff007f] via-white to-[#00f0ff]">{content.title.line2}</span>
         </h2>
 
-        <p className="s-elem brand-body text-base md:text-lg text-white/72 font-medium max-w-xl mt-4 leading-relaxed">
+        <p className="s-elem brand-body text-base md:text-lg text-white/80 font-medium max-w-2xl mt-6 leading-relaxed">
           {content.subtitle}
         </p>
 
-        <div className="s-elem mt-8 grid gap-4 md:grid-cols-2 pointer-events-auto flavors-grid">
+        <div className="s-elem mt-12 grid gap-6 md:gap-8 md:grid-cols-2 pointer-events-auto flavors-grid">
           {content.items.map((flavor) => (
             <article key={flavor.name} className="premium-card rounded-[18px] p-5 relative overflow-hidden bg-white/[0.03] border border-white/10">
               <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-[#ff007f] via-[#5d2b9c] to-[#00f0ff] opacity-80"></div>
