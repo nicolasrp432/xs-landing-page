@@ -206,37 +206,6 @@ body::before {
   }
 }
 
-  .align-left, .align-right {
-    padding-left: 5vw;
-    padding-right: 5vw;
-    padding-top: 6vh;
-    padding-bottom: 6vh;
-    text-align: center;
-    justify-content: center;
-  }
-  
-  .section-inner {
-    max-width: 100%;
-    margin: 0 auto;
-    gap: 1rem;
-  }
-
-  .flavors-section .section-inner {
-    max-width: 100%;
-    padding-bottom: 12vh;
-  }
-
-  .flavors-grid {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-  }
-
-  .flavors-grid article {
-    padding: 1.25rem;
-    min-height: 0;
-  }
-}
-
 .glass-card {
   background: linear-gradient(180deg, rgba(22, 22, 26, 0.78), rgba(22, 22, 26, 0.54));
   backdrop-filter: blur(14px);
