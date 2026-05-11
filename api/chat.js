@@ -91,7 +91,7 @@ export default async function handler(req, res) {
         'X-Title': 'XS Energy Assistant'
       },
       body: JSON.stringify({
-        model: 'meta-llama/llama-3.3-8b-instruct:free',
+        model: 'google/gemma-3-4b-it:free',
         messages: [
           { role: 'system', content: SYSTEM_PROMPT },
           ...messages
