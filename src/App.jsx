@@ -6,6 +6,7 @@ import FloatingAgent from './FloatingAgent';
 import { useABTest } from './hooks/useABTest';
 
 import { CONTENT } from './data/content';
+import { Loader } from './components/Loader';
 import { Navigation } from './components/Navigation';
 import { HeroSection } from './components/HeroSection';
 import { StickyCTA } from './components/StickyCTA';
@@ -21,7 +22,8 @@ import { Check } from './components/Icons';
 gsap.registerPlugin(ScrollTrigger);
 
 export default function App() {
-  const [framesReady, setFramesReady] = useState(false);
+  const [loaded, setLoaded] = useState(false);
+  const [progress, setProgress] = useState(0);
   const [modalContent, setModalContent] = useState(null);
   const pricingVariant = useABTest('pricing_cta_text');
   
@@ -86,13 +88,13 @@ export default function App() {
       img.src = `/frames/frame_${paddedIndex}.webp?v=3`;
       img.onload = () => {
         imagesLoaded++;
-        // Draw first frame as soon as it's ready for immediate visual
-        if (imagesLoaded === 1) drawFrame(0);
-        if (imagesLoaded === FRAME_COUNT) setFramesReady(true);
+        setProgress(Math.round((imagesLoaded / FRAME_COUNT) * 100));
+        if (imagesLoaded === 10) drawFrame(1);
+        if (imagesLoaded === FRAME_COUNT) setTimeout(() => setLoaded(true), 300);
       };
       img.onerror = () => {
         imagesLoaded++;
-        if (imagesLoaded === FRAME_COUNT) setFramesReady(true);
+        if (imagesLoaded === FRAME_COUNT) setLoaded(true);
       };
       frames.push(img);
     }
@@ -175,7 +177,7 @@ export default function App() {
   }, []);
 
   useLayoutEffect(() => {
-    if (!framesReady) return;
+    if (!loaded) return;
     const sections = gsap.utils.toArray('.scroll-section');
     const ctx = gsap.context(() => {
       sections.forEach((section) => {
@@ -253,7 +255,7 @@ export default function App() {
 
     }, scrollContainerRef);
     return () => ctx.revert();
-  }, [framesReady]);
+  }, [loaded]);
 
   const trackEvent = useCallback((eventName, data = {}) => {
     // Merge global context (like A/B variants) into tracking data
@@ -322,9 +324,12 @@ export default function App() {
 
   return (
     <>
-      <Navigation onCTA={handleCTA} />
+      {!loaded && <Loader progress={progress} />}
+      
+      <div style={{ visibility: loaded ? 'visible' : 'hidden' }}>
+        <Navigation onCTA={handleCTA} />
 
-      <div className="canvas-wrap">
+        <div className="canvas-wrap">
         <canvas ref={canvasRef} id="canvas"></canvas>
       </div>
 
@@ -343,7 +348,8 @@ export default function App() {
       </div>
       
       <Modals modalContent={modalContent} setModalContent={setModalContent} />
-      <FloatingAgent />
+        <FloatingAgent />
+      </div>
     </>
   );
 }
