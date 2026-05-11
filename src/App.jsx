@@ -253,7 +253,7 @@ export default function App() {
 
     }, scrollContainerRef);
     return () => ctx.revert();
-  }, [loaded]);
+  }, [framesReady]);
 
   const trackEvent = useCallback((eventName, data = {}) => {
     // Merge global context (like A/B variants) into tracking data
