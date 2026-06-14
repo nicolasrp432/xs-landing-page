@@ -9,12 +9,12 @@ export const FAQSection = React.memo(function FAQSection({ content }) {
   };
 
   return (
-    <section className="scroll-section align-left" data-enter="60" data-leave="72" data-animation="fade-up">
+    <section className="scroll-section align-left" data-enter="65" data-leave="80" data-animation="fade-up">
       <div className="section-inner">
-        <span className="s-elem brand-chip px-3 py-1 text-[10px] uppercase tracking-[0.32em] mb-4 block w-fit">{content.badge}</span>
-        <h2 className="s-elem brand-heading text-[clamp(2.4rem,4.5vw,4.75rem)] drop-shadow-lg mb-8 text-white">{content.title}</h2>
+        <span className="s-elem brand-chip px-3 py-1 text-[10px] uppercase tracking-[0.32em] mb-8 block w-fit">{content.badge}</span>
+        <h2 className="s-elem brand-heading text-[clamp(2.4rem,4.5vw,4.75rem)] drop-shadow-lg mb-12 text-white leading-tight">{content.title}</h2>
         
-        <div className="s-elem space-y-4 max-w-2xl pointer-events-auto">
+        <div className="s-elem space-y-5 max-w-3xl pointer-events-auto">
           {content.items.map((item, idx) => (
             <div key={idx} className="premium-card rounded-[16px] overflow-hidden">
               <button

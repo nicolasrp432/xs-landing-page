@@ -3,6 +3,7 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import { createCheckoutSession } from './stripe/create-checkout-session.js';
 import { handleWebhook } from './stripe/webhook.js';
+import { handleChatMessage } from './chat/chat-handler.js';
 
 dotenv.config();
 
@@ -34,6 +35,20 @@ app.post('/api/create-checkout-session', async (req, res) => {
     res.json({ url: session.url });
   } catch (error) {
     console.error('Error creating checkout session:', error);
+    res.status(500).json({ error: error.message });
+  }
+});
+
+app.post('/api/chat', async (req, res) => {
+  try {
+    const { messages } = req.body;
+    if (!messages || !Array.isArray(messages)) {
+      return res.status(400).json({ error: 'Messages array required' });
+    }
+    const response = await handleChatMessage(messages);
+    res.json({ content: response });
+  } catch (error) {
+    console.error('Error in chat:', error);
     res.status(500).json({ error: error.message });
   }
 });

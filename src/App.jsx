@@ -89,7 +89,6 @@ export default function App() {
       img.onload = () => {
         imagesLoaded++;
         setProgress(Math.round((imagesLoaded / FRAME_COUNT) * 100));
-        
         if (imagesLoaded === 10) drawFrame(1);
         if (imagesLoaded === FRAME_COUNT) setTimeout(() => setLoaded(true), 300);
       };
@@ -327,9 +326,10 @@ export default function App() {
     <>
       {!loaded && <Loader progress={progress} />}
       
-      <Navigation onCTA={handleCTA} />
+      <div style={{ visibility: loaded ? 'visible' : 'hidden' }}>
+        <Navigation onCTA={handleCTA} />
 
-      <div className="canvas-wrap">
+        <div className="canvas-wrap">
         <canvas ref={canvasRef} id="canvas"></canvas>
       </div>
 
@@ -348,7 +348,8 @@ export default function App() {
       </div>
       
       <Modals modalContent={modalContent} setModalContent={setModalContent} />
-      <FloatingAgent />
+        <FloatingAgent />
+      </div>
     </>
   );
 }
