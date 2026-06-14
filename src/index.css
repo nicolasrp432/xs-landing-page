@@ -173,7 +173,9 @@ body::before {
   }
 
   .scroll-section {
-    padding: 0 5vw !important;
+    padding: 14vh 5vw 10vh !important;
+    align-items: flex-start !important;
+    min-height: 130vh;
   }
 
   .section-inner {
