@@ -20,10 +20,14 @@ export const PricingSection = React.memo(function PricingSection({ content, onCT
         {/* Starter */}
         <div className="relative premium-card bg-black/50 p-8 rounded-[22px] text-left flex flex-col justify-between" style={{ transform: 'rotateY(5deg)' }}>
           <div>
-            <h3 className="text-sm font-semibold tracking-[0.28em] text-white/45 mb-2 uppercase">{starter.name}</h3>
-            <div className="text-4xl font-black mb-2 text-white brand-heading">{starter.quantity}</div>
-            <div className="text-sm text-white/45 mb-6 brand-body">{starter.description}</div>
-            <ul className="space-y-4 text-white/72 mb-10 text-sm font-medium">
+            <h3 className="text-xs sm:text-sm font-semibold tracking-[0.28em] text-white/45 mb-3 uppercase">{starter.name}</h3>
+            <div className="flex items-baseline gap-2 mb-1">
+              <span className="text-4xl sm:text-5xl font-black text-white brand-heading">{starter.price}</span>
+              <span className="text-sm text-white/55 font-semibold">{starter.quantity}</span>
+            </div>
+            <div className="text-xs text-white/40 mb-1">{starter.unitPrice}</div>
+            <div className="text-xs sm:text-sm text-white/55 mb-6 brand-body">{starter.description}</div>
+            <ul className="space-y-3 text-white/72 mb-8 text-sm font-medium">
               {starter.features.map((feature, idx) => (
                 <li key={idx} className="flex items-center gap-3"><Check size={16} className="text-[#ff007f]" /> {feature}</li>
               ))}
@@ -47,14 +51,16 @@ export const PricingSection = React.memo(function PricingSection({ content, onCT
           )}
 
           <div>
-            <h3 className="text-sm font-semibold tracking-[0.28em] text-[#ff8cc0] mb-2 uppercase drop-shadow-[0_0_10px_rgba(255,0,127,0.35)]">{pro.name}</h3>
-            <div className="flex items-end gap-3 mb-2">
-              <div className="text-5xl font-black text-white brand-heading drop-shadow-lg">{pro.quantity}</div>
-              <div className="text-lg text-white/45 line-through mb-1">{pro.price}</div>
+            <h3 className="text-xs sm:text-sm font-semibold tracking-[0.28em] text-[#ff8cc0] mb-3 uppercase drop-shadow-[0_0_10px_rgba(255,0,127,0.35)]">{pro.name}</h3>
+            <div className="flex items-baseline flex-wrap gap-x-3 gap-y-1 mb-1">
+              <span className="text-4xl sm:text-5xl font-black text-white brand-heading drop-shadow-lg">{pro.price}</span>
+              <span className="text-base text-white/40 line-through">{pro.originalPrice}</span>
+              <span className="text-sm text-white/55 font-semibold">{pro.quantity}</span>
             </div>
-            <div className="text-xs text-[#ff8cc0] mb-8 uppercase tracking-[0.28em] font-semibold">{pro.description}</div>
+            <div className="text-xs text-[#ff8cc0]/80 mb-1">{pro.unitPrice}</div>
+            <div className="text-xs text-[#ff8cc0] mb-6 uppercase tracking-[0.28em] font-semibold">{pro.description}</div>
             
-            <ul className="space-y-4 text-white/82 mb-10 text-sm font-medium">
+            <ul className="space-y-3 text-white/82 mb-8 text-sm font-medium">
               <li className="flex items-center gap-3"><Zap size={16} className="text-[#ff007f]" fill="currentColor" /> {pro.features[0]}</li>
               <li className="flex items-center gap-3"><Truck size={16} className="text-[#00f0ff]" /> {pro.features[1]}</li>
               <li className="flex items-center gap-3"><Clock size={16} className="text-[#5d2b9c]" /> {pro.features[2]}</li>

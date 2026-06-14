@@ -89,8 +89,8 @@ body::before {
 
 @media (max-width: 768px) {
   #hero-overlay {
-    inset: auto auto 16vh 3vw;
-    max-width: 94vw;
+    inset: auto 4vw 21vh 4vw;
+    max-width: none;
   }
 }
 
